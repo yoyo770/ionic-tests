@@ -8,7 +8,7 @@ import { ModalController, NavParams } from '@ionic/angular';
 })
 export class ModalPage implements OnInit {
   items: Array<string> = [];
-  nbItems = 1000;
+  nbItems = 2000;
 
   constructor(private modalController: ModalController, private navParams: NavParams) { }
 

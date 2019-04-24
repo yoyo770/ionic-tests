@@ -13,7 +13,7 @@ export class HomePage {
   }
 
   openModal() {
-    let modal = this.modalCtrl.create(ModalPage);
+    let modal = this.modalCtrl.create(ModalPage,  {  timeClickButtonOpenModal: new Date().getTime()});
     modal.present();
   }
 }

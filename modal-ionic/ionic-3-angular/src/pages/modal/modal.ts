@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, ViewController } from 'ionic-angular';
 
 /**
  * Generated class for the ModalPage page.
@@ -14,14 +14,29 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'modal.html',
 })
 export class ModalPage {
-  rows = new Array(30*30);
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  items: Array<string> = [];
+  nbItems = 2000;
+
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public viewCtrl: ViewController
+  ) {
 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ModalPage');
+  ngOnInit() {
+    for (let i = 0; i < this.nbItems; i++) {
+      this.items[i] = 'item ' + i;
+    }
   }
 
+  ionViewDidEnter() {
+    console.log('Time to open modal with 1000 items:', new Date().getTime() - this.navParams.get('timeClickButtonOpenModal'));
+  }
+
+  closeModal() {
+    this.viewCtrl.dismiss();
+  }
 }
 
