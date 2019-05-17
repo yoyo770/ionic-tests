@@ -21,9 +21,7 @@ type State = {
 class App extends Component {
   render() {
     return (
-    
          <Modal></Modal>
-      
     );
   }
 }

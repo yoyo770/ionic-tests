@@ -32,7 +32,7 @@ export class ModalPage {
   }
 
   ionViewDidEnter() {
-    console.log('Time to open modal with 1000 items:', new Date().getTime() - this.navParams.get('timeClickButtonOpenModal'));
+    console.log('Time to open modal with 2000 items:', new Date().getTime() - this.navParams.get('timeClickButtonOpenModal'));
   }
 
   closeModal() {
